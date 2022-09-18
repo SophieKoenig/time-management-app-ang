@@ -7,17 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 // @Injectable({ providedIn: 'root' })
 export class TimerComponent implements OnInit {
+  title = 'Get Input Box Value';
+  displayVal = '';
+  getValue(val: string) {
+    console.warn(val);
+    this.displayVal = val;
+  }
+
   constructor() {
     // Called first time before the ngOnInit()
-  let counter: number = 5;
+    let counter: number = 5;
     (function repeat() {
       if (counter > 0) {
-      setTimeout(() => {
+        setTimeout(() => {
           counter = counter - 1;
           console.log(counter);
           repeat();
         }, 1000);
-      }})();
+      }
+    })();
     // let counter: number = 5;
     // this.counter = counter;
     // for (let i = 0; i < 5; i++) {
@@ -69,6 +77,5 @@ export class TimerComponent implements OnInit {
 
   ngOnInit(): void {
     // Called after the constructor and called  after the first ngOnChanges()
-    
   }
 }

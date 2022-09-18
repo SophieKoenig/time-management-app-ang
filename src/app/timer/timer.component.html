@@ -1,1 +1,4 @@
-<p>timer works!</p>
+<p>For how many minutes do you want to focus?</p>
+<input type="text" #box placeholder="Fill in the minutes" name="studyPhase" />
+<button (click)="getValue(box.value)">Start Study Time</button>
+<p>Box value is: {{ displayVal }}</p>
